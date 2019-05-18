@@ -1,0 +1,2 @@
+# Git-crypt protected files
+*.key filter=git-crypt diff=git-crypt
