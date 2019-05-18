@@ -17,6 +17,6 @@ helm init --service-account=tiller --tiller-namespace=tiller --tiller-tls \
     --tiller-tls-verify --tls-ca-cert certs/ca.crt
 
 #Move the certs to helm home for convenience (these need to be generated for anyone using the cluster)
-mv certs/ca.crt $(helm home)/ca.pem
+cp certs/ca.crt $(helm home)/ca.pem
 mv certs/myclient.crt $(helm home)/cert.pem
 mv certs/myclient.key $(helm home)/key.pem
