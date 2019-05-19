@@ -1,0 +1,5 @@
+imageBase: "eu.gcr.io/dean-ecosia-test/"
+
+todo:
+    imageTag: todo-mvc:v0.1
+    
