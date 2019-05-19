@@ -21,6 +21,8 @@
 .idea/
 *.tmproj
 
+README.md
+
 helm-init/
 src/
 
