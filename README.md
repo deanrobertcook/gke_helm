@@ -6,6 +6,8 @@ The application logic and config for my own GKE cluster. It currently uses Helm 
 ### Securing Helm
 After working from the advice of many different resources, I later [found one](https://engineering.bitnami.com/articles/helm-security.html}) that summarised the issues with Helm security perfectly. 
 
+If I had to do this again, then I would probably look into Helm 3, as it does away with the Tiller installation and in doing so makes the next two security issues moot. 
+
 #### RBAC, users and service accounts, and roles
 By default, the tiller installation is installed in the kube-system namespace with default serviceaccount from that namespace. luckily, In GKE, this seems to be more restricted. In order for Tiller to work, and to limit the damage done should there be a security breach, I installed it into it's own namespace with a custom service account (as recommended). A cluster role was defined and assigned to the account with two role-bindings: one for each of the Tiller and the default namespaces, giving Tiller full read/write access to those namespaces.
 
