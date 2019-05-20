@@ -1,5 +1,17 @@
 # GKE cluster code
-The application logic and config for my own GKE cluster. It currently uses Helm 2 with a secured installation of Tiller to install charts and package the application logic.
+The application logic and config for my own GKE cluster. 
+
+The purpose of this little project was to set up a cluster the "right" way, looking at things like security, container optimisation, monitoring, alerting, CI etc. from the ground up, using a simple application (code taken from [Todo MVC](http://todomvc.com/examples/typescript-react/#/), my [deployment is accessible here](http://35.244.170.92), if the IP hasn't changed). This turned out to be much trickier than anticipated and there were many things to be learnt, so I didn't get as far as I'd liked, but below are some of the things I managed to achieve over the weekend. 
+
+The limited size of my GKE cluster using the free credits from Google also proved to be a hurdle when setting up the ELK stack, since it seems to be quite a CPU and memory hog... 
+
+Things would like to dive into more, or that still are not working:
+* Using Helm 3 (no need for a secure Tiller deployment!)
+* Fix the application logs (after introducing the init system, it seems as though they're not being passed to stdout in the container)
+* Spinning up a few more nodes to support ELK
+* Introduce Prometheus and alerting (after installing a single-node ELK cluster, my other pods were getting evicted and I had no idea for a whole night!)
+* Look into typescript and react, get back into some web development
+* Look more into NodeJS
 
 ## Things I've learnt
 
